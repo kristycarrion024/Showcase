@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="edu.wcu.CatamountChars"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="7"/>
+    <application android:icon="@drawable/icon" android:label="@string/icon_name">
+        <activity android:name="Main"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainMenu"/>
+        <activity android:name=".OneLetter"/>
+        <activity android:name=".TwoLetters"/>
+        <activity android:name=".Image"/>
+        <activity android:name=".Display"/>
+        <activity android:name=".DisplayOneLetter"/>
+        <activity android:name=".DisplayTwoLetter"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".Information"/>
+    </application>
+</manifest> 

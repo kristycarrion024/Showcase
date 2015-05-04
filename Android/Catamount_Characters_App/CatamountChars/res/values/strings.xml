@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CatamountChars</string>
+    <string name="image_menu_header_text">Choose Image</string>
+    <string name="image_menu_button_one">Catamount</string>
+    <string name="image_menu_button_two">Tower</string>
+    <string name="image_menu_button_three">Computer</string>
+    <string name="image_menu_button_four">Science</string>
+    <string name="image_menu_button_five">2013</string>
+    <string name="about_me_header">About Me</string>
+    <string name="about_me_pic_description">Picture of myself</string>
+    <string name="about_me_text_one">Application Developed By :</string>
+    <string name="about_me_text_two">Snow Carrion</string>
+    <string name="about_me_text_three">Email:</string>
+    <string name="about_me_text_four">kicarrion1@catamount.wcu.edu</string>
+    <string name="splash_pic_description">splash image</string>
+    <string name="splash_text">By: Snow Carrion</string>
+    <string name="main_menu_header_textA">Catamount Characters</string>
+    <string name="main_menu_header_textB">Main Menu</string>
+    <string name="main_menu_button_one">One Letter </string>
+    <string name="main_menu_button_two">Two Letters</string>
+    <string name="main_menu_button_three">   Image   </string>
+    <string name="info_button">Information Button</string>
+    <string name="one_letter_header_textA">Choose One Character</string>
+    <string name="one_letter_header_textB">Enter one alpha-numeric</string>
+    <string name="one_letter_header_textC">character below :</string>
+    <string name="one_letter_hint">Enter one character here</string>
+    <string name="one_letter_button">Enter</string>
+    <string name="two_letter_header_textA">Choose Two Characters</string>
+    <string name="two_letter_header_textB">Enter two alpha-numeric</string>
+    <string name="icon_name">Catamount Characters</string>
+
+</resources>

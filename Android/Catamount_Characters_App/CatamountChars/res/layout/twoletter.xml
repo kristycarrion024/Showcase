@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/space_bl"
+              android:layout_weight="10">
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/two_letter_header_textA"
+            android:id="@+id/textView"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_weight=".5"/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/two_letter_header_textB"
+            android:id="@+id/textView1"
+            android:layout_gravity="center"
+            android:textSize="25dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/one_letter_header_textC"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:layout_weight="1"/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2a"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:hint="@string/one_letter_hint"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:layout_weight=".5"
+            android:inputType="text"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2b"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:hint="@string/one_letter_hint"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:maxLines="1"
+            android:maxLength="1"
+            android:layout_weight=".5"
+            android:inputType="text"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".5"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/one_letter_button"
+            android:id="@+id/buttonTwoLetter" android:layout_gravity="center" android:background="#ffffff"
+            android:paddingLeft="10dp" android:paddingRight="10dp" android:paddingTop="0dp"
+            android:paddingBottom="0dp" android:singleLine="false"
+            android:textSize="25dp" android:clickable="true"
+            android:layout_weight=".5"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"/>
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.9"/>
+
+</LinearLayout>

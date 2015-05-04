@@ -1,0 +1,2228 @@
+# Author: Kristy Carrion
+# Date: 03/03/2013
+# 
+# This log will document all the testing that I have done in my Database
+# script files. I will present the actions I took, with the output given, 
+# if any of it is incorrect I will fix it and document it and then try again.
+# This shows the process that I took in order to create a correct database
+# script.
+
+# The following a copy of the work done by testing the scripts with different
+# all possiable solutions that I could think of.
+# The work is done in via the command line and is presented in a seqential
+# order.
+# This shows every step of the process that I did in order to debug the 
+# code. 
+# I made sure to test everything I could think of, and I stored all the
+# final debugging work.
+#
+#
+#
+#kcarrion@polaris ~ $ lsa
+#-bash: lsa: command not found
+#kcarrion@polaris ~ $ ls
+#cs151/  cs263/  cs352/  cs363/  cs462/  daily/  mail/  mbox
+#kcarrion@polaris ~ $ cd cs462/
+#kcarrion@polaris ~/cs462 $ cd Database/
+#kcarrion@polaris ~/cs462/Database $ lss
+#-bash: lss: command not found
+#kcarrion@polaris ~/cs462/Database $ 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Hello
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Hello
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Hello
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Hello
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#2
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#./create_database.sh: line 26: [: 2: unary operator expected
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#template.dat
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#No template file exists. Creating template.dat... template.dat
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#template.dat
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#No template file exists. Creating template.dat... Template Definition File: template.dat
+#Error: Template :: Definition
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: Template :: Definition
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_tempalte_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#1
+#Error: Template :: Definition
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: Template :: Definition
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: 5
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: 5
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: zoo
+#Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#./database_exists.sh animals databases.txt
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#
+#Press ENTER or type command to continue
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#No template file exists. Creating template.dat... Template Definition File: template.dat
+#zoo
+#./database_exists.sh: line 50: syntax error near unexpected token `count=`expr $count + 1`'
+#./database_exists.sh: line 50: `        count=`expr $count + 1`'
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#./database_exists.sh: line 50: syntax error near unexpected token `count=`expr $count + 1`'
+#./database_exists.sh: line 50: `        count=`expr $count + 1`'
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#./database_exists.sh: line 50: syntax error near unexpected token `count=`expr $count + 1`'
+#./database_exists.sh: line 50: `        count=`expr $count + 1`'
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#./database_exists.sh: line 50: syntax error near unexpected token `count=`expr $count + 1`'
+#./database_exists.sh: line 50: `        count=`expr $count + 1`'
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_Database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#No template file exists. Creating template.dat... Template Definition File: template.dat
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#zoo
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Template Definition File: template.dat
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_tempalte_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Template Definition File: template.dat
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#template.dat
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh zoo animals
+#No template file exists. Creating template.dat... template.dat
+#Error: Template zoo does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ ./create_template.sh
+#Too few arguments.
+#Usage: ./create_template.sh [TemplateName] [FieldNames...]
+#kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals doggy kitty
+#Template "animals doggy kitty" has been added to template.dat template definition file.
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals doggy kitty
+#Template "doggy" has been added to template.dat template definition file.
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals doggy kitty
+#Error: Template "animals" already exists.
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals doggy kitty
+#Template "animals" has been added to template.dat template definition file.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh
+#Error: Incorrect number of arguments.
+#Usage: <Template_Name> <Database_Name>
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#
+#Now exiting ...
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ f
+#Login      Name               Tty      Idle  Login Time   Office     Office Phone
+#cward      Christopher Ward   pts/11     43  Mar  4 17:44 (152.30.110.76)
+#jstilwell  Jeremy Stilwell    pts/9    1:34  Mar  4 16:51 (152.30.102.165)
+#kcarrion   Snow Carrion       pts/0          Mar  4 18:25 (24.246.150.26)
+#sfacello   Sean Facello       pts/2       3  Mar  4 19:10 (152.30.52.191)
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log*
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#Error: Incorrect number of arguments.
+#Usage: <Template_Name> <Database_Name>
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#databases.txt does not exist or is not a regular file.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#0 Did not find the Database in the specified database list file.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#2 databases.txt does not exist or is not a regular file.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Did not find the Database in the specified database list file.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#mac and cheezles
+#
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#./create_database.sh: line 37: animals: command not found
+#./create_database.sh: line 39: : command not found
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh poops poops
+#template.dat
+#Error: Template poops does not exist.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#Error: Incorrect number of arguments.
+#Usage: <Template_Name> <Database_Name>
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh poops
+#Error: Incorrect number of arguments.
+#Usage: <Template_Name> <Database_Name>
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim template.dat
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ rm databases.xt
+#rm: cannot remove âtabases.xtâNo such file or directory
+#kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#^[[ADatabase zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim template.dat
+#kcarrion@polaris ~/cs462/Database $ vim databases.dat
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#WTF
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#WTF
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#3
+#WTF
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#./database_exists.sh: line 55: [: missing `]'
+#3
+#WTF zoo animals
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#./database_exists.sh: line 55: [: missing `]'
+#./database_exists.sh: line 55: [: missing `]'
+#3
+#WTF zoo animals zoo animals
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#./database_exists.sh: line 55: [: missing `]'
+#./database_exists.sh: line 55: [: missing `]'
+#./database_exists.sh: line 55: [: missing `]'
+#3
+#WTF zoo animals zoo animals zoo animals
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#0
+#WTF zoo animals zoo animals zoo animals zoo animals Succesfully found the database zoo.
+#Database already exists.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#0
+#Succesfully found the database zoo.
+#Database already exists.
+#kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.shj
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database already exists.
+#kcarrion@polaris ~/cs462/Database $ la
+#total 60K
+#drwxr-xr-x 3 kcarrion kcarrion 4.0K Mar  4 10:07 backup/
+#drwxr-x--- 2 kcarrion kcarrion 4.0K Mar  3 19:25 junkscripts/
+#-rw-r----- 1 kcarrion kcarrion 3.3K Mar  4 14:40 .database.tar
+#-rw-r----- 1 kcarrion kcarrion 1.4K Mar  4 17:17 create.sh
+#-rwxrwx--- 1 kcarrion kcarrion  996 Mar  4 20:15 create_database.sh*
+#-rwxr-xr-x 1 kcarrion kcarrion 1.7K Mar  4 19:13 create_template.sh*
+#-rwxrwx--- 1 kcarrion kcarrion 1.9K Mar  4 20:15 database_exists.sh*
+#-rw-rw---- 1 kcarrion kcarrion  336 Mar  4 20:14 databases.txt
+#-rw-rw---- 1 kcarrion kcarrion   92 Mar  4 16:24 find_template_file.awk
+#-rwxr-xr-x 1 kcarrion kcarrion 3.3K Mar  4 19:09 find_template_file.sh*
+#-rwxr-xr-x 1 kcarrion kcarrion 1.9K Mar  4 20:03 permissions_helper.sh*
+#-rw-rw---- 1 kcarrion kcarrion   44 Mar  4 19:13 template.dat
+#-rwxr-xr-x 1 kcarrion kcarrion 1.6K Mar  4 18:56 template_exists.sh*
+#-rwxrwx--- 1 kcarrion kcarrion  426 Mar  4 16:56 testing.log*
+#-rw-rw---- 1 kcarrion kcarrion    1 Mar  4 20:14 zoo.db
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database zoo using template animals has been created.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Database already exists.
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animal zoo
+#template.dat
+#Error: Template animal does not exist.
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#0
+#template.dat
+#Database already exists.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Error: Database already exists.
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ man wc
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#
+#^C
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#./create_database.sh: line 32: [: =: unary operator expected
+#
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#Error: Incorrect number of arguments.
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#
+#Press ENTER or type command to continue
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#Error: Incorrect number of arguments: 1
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#
+#Error: Incorrect number of arguments: 1
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#Error: Database already exists.
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#Error: Incorrect number of arguments: 4
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Error: Template animals does not exist.
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#g template.dat... template.dat
+#Error: Incorrect number of arguments: 4
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Error: Template animals does not exist.
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#g template.dat... template.dat
+#Error: Incorrect number of arguments: 4
+#Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ man echo
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Error: Template animals does not exist.
+#kcarrion@polaris ~/cs462/Database $ rm template.dat
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#template.dat
+#Error: Template animals does not exist.
+#kcarrion@polaris ~/cs462/Database $ ls
+#backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+# 
+# template.dat
+# Error: Template animals does not exist.
+# kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+# kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+# template.dat
+# Error: Template animals does not exist.
+# kcarrion@polaris ~/cs462/Database $ rm template.dat
+# kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#    
+#    template.dat
+#    Error: Template animals does not exist.
+#    kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#    kcarrion@polaris ~/cs462/Database $ rm template.dat
+#    kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#    No template file exists.
+#    Creating template.dat...
+#    template.dat
+#       
+#       template.dat
+#       Error: Template animals does not exist.
+#       kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#       kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#       Error: Template animals does not exist.
+#       kcarrion@polaris ~/cs462/Database $ rm template.dat
+#       kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#         No template file exists. Creating template.dat...
+#         Error: Template animals does not exist.
+#         kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#         kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#         Error: Template animals does not exist.
+#         kcarrion@polaris ~/cs462/Database $ rm template.dat
+#         kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#           No tem
+#           Error: Template animals does not exist.
+#           kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#           kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#           Error: Template animals does not exist.
+#           kcarrion@polaris ~/cs462/Database $ rm template.dat
+#           kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#             No template file exists. Creating template.dat...
+#             Error: Template animals does not exist.
+#             kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#             kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#             Error: Template animals does not exist.
+#             kcarrion@polaris ~/cs462/Database $ rm template.dat
+#             kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              No template file exists. Creating template.dat...
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              No template file exists. Creating template.dat...
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ cd junkscripts
+#              kcarrion@polaris ~/cs462/Database/junkscripts $ ls
+#              go.sh*  testing.sh*
+#              kcarrion@polaris ~/cs462/Database/junkscripts $ vim go.sh
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              template.dat
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              No template file exists. Creating template.dat... template.dat
+#              Error: Incorrect number of arguments: 8
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              No template file exists. Creating template.dat...
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh            create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ chmod a+x create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              template
+#              ./create.sh: line 24: [: =: unary operator expected
+#              ./create.sh: line 31: [: =: unary operator expected
+#              ./create.sh: line 38: [: =: unary operator expected
+#              That is an invalid command. \n
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              ./create.sh: line 38: [: =: unary operator expected
+#              That is an invalid command. \n
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              That is an invalid command. \n
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ vim create.shj
+#              kcarrion@polaris ~/cs462/Database $ vim create.shj
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              create
+#              Please enter a new database name: 
+#              Please enter the database list file name: 
+#              ^C
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a new database name: 
+#              hi
+#              Please enter the database list file name: 
+#              poo
+#              ./create.sh: line 29: Error:: command not found
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh 
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a new database name: 
+#              hi
+#              Please enter the database list file name: 
+#              poo
+#              ./create.sh: line 29: Error:: command not found
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh 
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh 
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a new database name: 
+#              go
+#              Please enter the database list file name: 
+#              go
+#              Error: Template go does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              template
+#              Please enter a new template name: 
+#              animals
+#              Please enter up to 8 field names (divided by spaces): 
+#              puppy kitty doggy froggy
+#              Template "animals" has been added to template.dat template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a new database name: 
+#              zoo
+#              Please enter the database list file name: 
+#              databases.txt
+#              Error: Template zoo does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              zoo
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ vim database.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments.
+#              Usage: <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ f
+#              Login     Name              Tty      Idle  Login Time   Office     Office Phone
+#              jgrimes   Jeremiah Grimes   pts/4          Mar  4 19:40 (50.55.205.133)
+#              kcarrion  Snow Carrion      pts/0          Mar  4 18:25 (24.246.150.26)
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              0
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              0
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments.
+#              Usage: ./database_exists.sh <DATABASE> [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh zoo databases.txt
+#              zoo animals
+#              Succesfully found the database zoo.
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh zoo databases.txt
+#              database.txt does not exist. Creating database.txt...
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments.
+#              Usage: <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              3
+#              Database zoo using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              3
+#              Database zoo using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              zoo animals Succesfully found the database zoo.
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              zoo animals found the database zoo.
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              found the database zoo.
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              Found the database zoo.
+#              Error: Database already exists.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals zoo
+#              Found the database zoo.
+#              Error: Database zoo already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              ^C
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              zoo
+#              Found the database zoo.
+#              Error: Database zoo already exists.
+#              kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              animals
+#              That is an invalid command.
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              zoo
+#              database.txt does not exist. Creating database.txt...
+#              Database zoo using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              zoo
+#              Please enter the name of the new database: 
+#              animals
+#              Error: Template zoo does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              create
+#              Please enter the name of the new database: 
+#              create
+#              Error: Template create does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              hydrogen
+#              ./database_exists.sh: line 61: Database not found.: command not found
+#
+#              Database hydrogen using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template_exists.sh*  zoo.db
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hydrogen.db             template.dat            testing.log*
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              zoo
+#              Found the database zoo.
+#              Error: Database zoo already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              animals
+#              Please enter the name of the new database: 
+#              go
+#              Database not found.
+#              Database go using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  hydrogen.db             template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  go.db                   permissions_helper.sh*  template_exists.sh*  zoo.db
+#              kcarrion@polaris ~/cs462/Database $ rm *.db
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              create
+#              Please enter a template name: 
+#              template
+#              Please enter the name of the new database: 
+#              j
+#              Error: Template template does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              template
+#              Please enter a new template name: 
+#              colors
+#              Please enter up to 8 field names (divided by spaces): 
+#              red blue 32
+#              Template "colors" has been added to template.dat template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file and a specified template to
+#              search for, seperated by a space.
+#              template.dat colors
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search  
+#              Please enter a template definition file and a specified template to
+#              search for, seperated by a space.
+#              template.dat
+#              Incorrect number of arguments: 1
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              template.dat
+#              Please enter a template to search for:
+#              colors
+#              colors template has been found.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              template.dat
+#              Please enter a template to search for:
+#              colorsgo
+#              Template colorsgo does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              template.dat
+#              Please enter a template to search for:
+#              animals
+#              animals template has been found.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              template.dat
+#              Please enter a template to search for:
+#              ecolors
+#              Template ecolors does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              jweioa
+#              Please enter a template to search for:
+#              go
+#              jweioa does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              fewhaoeiwfh
+#              jweioa does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template.dat
+#              jweioa does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template
+#              jweioa does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template.dat
+#              jweioa does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              ^C
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh animals zoo
+#              Warning: Command-Line arguments will be ignored.
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file:
+#              fejwiojiwo
+#              Please enter a template to search for:
+#              ajfoiewjafe
+#              fejwiojiwo does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              fjekwlajfklewaj
+#              fjekwlajfklewaj does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              fjeiwaohfweahfehwaioh
+#              fjeiwaohfweahfehwaioh does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              fejwaiojiofejiowajifea
+#              fejwaiojiofejiowajifea does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template.dat
+#              Template ajfoiewjafe does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh fegwegadg animals
+#              fegwegadg does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              fjewiaojfewajio
+#              fjewiaojfewajio does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template.dat
+#              animals template has been found.
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#              Please enter a template definition file and a template to search for,
+#              seperated by a space.
+#              template.dat hi
+#              Template hi does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              template
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              numbers one two three
+#              Template "numbers" has been added to template.dat template definition file.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              template
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              cheers yay woo whoopee
+#              Template "cheers" has been added to the template.dat 
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              Enter 'template' to create a template for a database,
+#              or enter 'search' to check if a specifed template exists.
+#              search
+#
+#              Please enter a template definition file and a template to search for,
+#              seperated by a space.
+#              template.dat animals
+#
+#              animals template has been found.
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              ^C
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              ^C   
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create  
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              zoo puppies kittens doggies
+#
+#              Error: Incorrect number of arguments.
+#              Usage: <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              zoo puppies kittens doggies
+#
+#              Error: Incorrect number of arguments: 4
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              animals ocean
+#
+#              Database not found.
+#              Database ocean using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              template
+#
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              one two three four five six seven eight nine ten
+#
+#              Not enough arguments.
+#              Usage: ./create_template.sh [FILENAME] [FIELD_NAMES...]
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              template
+#
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              1 2 3 4 5 6 7 8 9 10 
+#
+#              Too many arguments: 10
+#              Usage: ./create_template.sh [FILENAME] [FIELD_NAMES...]
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#
+#
+#              That is an invalid command.
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              template
+#
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#
+#
+#              Too few arguments: 0
+#              Usage: ./create_template.sh [TemplateName] [FieldNames...]
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              search
+#
+#              Please enter a template definition file and a template to search for,
+#              seperated by a space.
+#
+#
+#              Incorrect number of arguments: 0
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              search
+#
+#              Please enter a template definition file and a template to search for,
+#              seperated by a space.
+#              one two three four
+#
+#              Incorrect number of arguments: 4
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  ocean.db                template.dat            testing.log*
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh databases.txt animals
+#              Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh databases.txt animals
+#              Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh template.dat animals
+#              animals template has been found.
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh template.dat animal
+#              Template animal does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh go animals
+#              go does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              j
+#              j does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              f
+#              f does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              e
+#              e does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              d
+#              d does not exist or is not a regular file.
+#              Please input the correct template definition file name: 
+#              template.dat
+#              animals template has been found.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  ocean.db                template.dat            testing.log*
+#              kcarrion@polaris ~/cs462/Database $ vim ocean.db
+#              kcarrion@polaris ~/cs462/Database $ rm *.db
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.awk
+#              kcarrion@polaris ~/cs462/Database $ chmod a-x testing.log
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_tempalte_file.sh
+#              -bash: ./find_tempalte_file.sh: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_tempalte_file.sh
+#              -bash: ./find_tempalte_file.sh: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim go.fuck
+#              kcarrion@polaris ~/cs462/Database $ vim hello.hi
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              Multiple template files found:
+#              hello.hi
+#              template.dat
+#              Please delete all but the current template file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hello.hi                template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ rm hello.hi 
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim permissions_helper.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh
+#              Too few arguments: 0
+#              Usage: ./create_template.sh [TemplateName] [FieldNames...]
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              Template "animals" has been added to the template.dat 
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database
+#              -bash: ./create_database: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cat
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cat
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cat
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cat
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              Template "animals" has been added to the template.dat 
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              No template file exists. Creating template.dat...
+#              Template "animals" has been added to the template.dat 
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog 
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh colors one two three
+#              Template "colors" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals lame
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animal elephants
+#              Template "animal" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals elephants
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists
+#              -bash: ./database_exists: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments.
+#              Usage: ./database_exists.sh <DATABASE> [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals pups
+#              database.txt does not exist. Creating database.txt...
+#              Database pups using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals pups
+#              Found the database pups.
+#              Error: Database pups already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals hooligans
+#              Database not found.
+#              Database hooligans using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh teeth dogs
+#              Error: Template teeth does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh teeth
+#              Error: Incorrect number of arguments: 1
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh teeth dogs unicorns
+#              Error: Incorrect number of arguments: 3
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            pups.db                 template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments.
+#              Usage: ./database_exists.sh <DATABASE> [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh databases.txt pups
+#              database.txt does not exist. Creating database.txt...
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            pups.db                 template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim databases.txt
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments.
+#              Usage: ./database_exists.sh <DATABASE> [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./database_exists.sh [DATABASE TO SEARCH FOR] [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups databases.txt
+#              Found the database pups.
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups tester.txt
+#              tester.txt does not exist. Creating tester.txt...
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template.dat         tester.txt
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            pups.db                 template_exists.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template.dat         tester.txt
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            pups.db                 template_exists.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim tester.txt
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups tester.txt
+#              Database not found.
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim tester.txt
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups tester.txt
+#              Database not found in tester.txt.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  permissions_helper.sh*  template.dat         tester.txt
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            pups.db                 template_exists.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ rm tester.txt
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups databases.txt
+#              Found the database pups.
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pups databases.txt
+#              Found the database "pups" in databases.txt.
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh pus databases.txt
+#              Database "pus" not found in databases.txt.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals template.dat
+#              Database "template.dat" not found in databases.txt.
+#              Database template.dat using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals moomoo
+#              Database "moomoo" not found in databases.txt.
+#              Database moomoo using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  moomoo.db               pups.db       template.dat.db      testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  hooligans.db            permissions_helper.sh*  template.dat  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ rm *.db
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh california go
+#              Error: Template california does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh california 
+#              Error: Incorrect number of arguments: 1
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh california go go
+#              Error: Incorrect number of arguments: 3
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cows
+#              Database "cows" not found in databases.txt.
+#              Database cows using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals cows
+#              Found the database "cows" in databases.txt.
+#              Error: Database cows already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animal cows
+#              Found the database "cows" in databases.txt.
+#              Error: Database cows already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animal cow
+#              Database "cow" not found in databases.txt.
+#              Database cow using template animal has been created.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh anil cow
+#              Error: Template anil does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       cow.db   create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  cows.db  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ rm *.db
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ cd bakcup
+#              backup
+#              kcarrion@polaris ~/cs462/Database/backup $ ls
+#              Database/
+#              kcarrion@polaris ~/cs462/Database/backup $ cd Database
+#              kcarrion@polaris ~/cs462/Database/backup/Database $ ls
+#              bak/          create.sh           create_template.sh*  database_exists.sh      find_template_file.sh*  template.dat
+#              junkscripts/  create_database.sh  database.tar         find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database/backup/Database $ cd ..
+#              kcarrion@polaris ~/cs462/Database/backup $ cd ..
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ cp *.* backup/
+#              kcarrion@polaris ~/cs462/Database $ cd backup
+#              kcarrion@polaris ~/cs462/Database/backup $ ls
+#              Database/   create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              create.sh*  create_template.sh*  databases.txt        find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database/backup $ cd ..
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.awk
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  databases.txt           find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ rm databases.txt
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim create.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh 
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim test.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              Multiple template files found:
+#              test.dat
+#              template.dat
+#              Please delete all but the current template file.
+#              kcarrion@polaris ~/cs462/Database $ vim test.dat
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ rm test.dat
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#              kcarrion@polaris ~/cs462/Database $ vim permissions_helper.sh
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./template_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./template_exists.sh [TemplateFileName] [TemplateName]
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       create.sh*           create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              junkscripts/  create_database.sh*  database_exists.sh*  find_template_file.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ vim database_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              0
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ vim permissions_helper.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./permissions_helper template.dat
+#              -bash: ./permissions_helper: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ ./permissions_helper.sh template.dat
+#              template.dat does not exist or is not a regular file.
+#              kcarrion@polaris ~/cs462/Database $ vim permissions_helper.sh
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat already exists, but is not the template file. Please
+#              delete template.dat or create a new template file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ vim permissions_helper.sh
+#              kcarrion@polaris ~/cs462/Database $ vim find_template_file.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./permissions_helper.sh template.dat
+#              template.dat does not exist or is not a regular file.
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh
+#              Too few arguments: 0
+#              Usage: ./create_template.sh [TemplateName] [FieldNames...]
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog
+#              No template file exists. Creating template.dat...
+#              ./template_exists.sh: line 44: [: 0: unary operator expected
+#              ^[[A^[[A^[[A^[[B^C
+#              kcarrion@polaris ~/cs462/Database $ vim create_template.sh
+#
+#
+#              Press ENTER or type command to continue
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog
+#              Template "animals" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog
+#              Error: Template "animals" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh animals dog cat frog fjewioafjiewa iofweahio fihowea hiofweahiof hioweahiof wehafhowieaohieo
+#              Too many arguments: 10
+#              Usage: ./create_template.sh [FILENAME] [FIELD_NAMES...]
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh colors red blue
+#              Template "colors" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh 
+#              Incorrect number of arguments: 0
+#              Usage: ./database_exists.sh [DATABASE TO SEARCH FOR] [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              ./create_database.sh: line 44: [: too many arguments
+#              r does not exist or is not a regular file.
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh 
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              r does not exist or is not a regular file.
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              r does not exist or is not a regular file.
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              r does not exist or is not a regular file.
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim template_exists.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#              [No write since last change]
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Error: databases.txt exists but is not readable.
+#              ./create_database.sh: line 102: syntax error near unexpected token `fi'
+#              ./create_database.sh: line 102: `fi'
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Error: databases.txt exists but is not readable.
+#              databases.txt does not exist or is not a regular file.
+#              Please adjust the filesystem accordingly.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#
+#
+#              Could not read the template file. Please adjust the filesystem.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Error: databases.txt exists but is not readable.
+#              databases.txt does not exist or is not a regular file.
+#              Please adjust the filesystem accordingly.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Error: databases.txt exists but is not readable.
+#              databases.txt does not exist or is not a regular file.
+#              Please adjust the filesystem accordingly.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*     find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Error: databases.txt exists but is not readable.
+#              2
+#              databases.txt does not exist or is not a regular file.
+#              Please adjust the filesystem accordingly.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              databases.txt does not exist. Creating databases.txt...
+#              Database dog using template animals has been created.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*  dog.db                  find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  databases.txt        find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh
+#              Too few arguments: 0
+#              Usage: ./create_template.sh [TemplateName] [FieldNames...]
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh colors red blue
+#              Error: Template "colors" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh dogs cats blue
+#              Template "dogs" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create_template.sh dogs cats blue
+#              Error: Template "dogs" already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./database_exists.sh [DATABASE TO SEARCH FOR] [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals dog
+#              Found the database "dog" in databases.txt.
+#              Error: Database dog already exists.
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh dog
+#              Incorrect number of arguments: 1
+#              Usage: ./database_exists.sh [DATABASE TO SEARCH FOR] [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh dog databases.txt
+#              Found the database "dog" in databases.txt.
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh dog datbases.txt
+#              datbases.txt does not exist. Creating datbases.txt...
+#              kcarrion@polaris ~/cs462/Database $ rm datbases.txt
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh 
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ rm template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              No template file exists.
+#              Creating template.dat...
+#              template.dat
+#              kcarrion@polaris ~/cs462/Database $ mv template.dat lame.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              lame.dat
+#              kcarrion@polaris ~/cs462/Database $ cp lame.dat template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./find_template_file.sh 
+#              Multiple template files found:
+#              lame.dat
+#              template.dat
+#              Please delete all but the current template file.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*  dog.db                  find_template_file.sh*  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  databases.txt        find_template_file.awk  lame.dat                template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              oceans atlantic pacific
+#
+#              Error: Incorrect number of arguments: 3
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              template
+#
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              oceans atlantic pacific
+#
+#              Multiple template files found:
+#              lame.dat
+#              template.dat
+#              Please delete all but the current template file.
+#              kcarrion@polaris ~/cs462/Database $ rm lame.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              oceans atlantic pacific
+#
+#              That is an invalid command.
+#              Now exiting ...
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              template
+#
+#              Please enter a new template name and up to 8 field names (each
+#              divided by spaces)
+#              oceans atlantic pacific
+#
+#              Template "oceans" has been added to the "template.dat"
+#              template definition file.
+#              kcarrion@polaris ~/cs462/Database $ ./create.sh
+#              Please enter 'create' to create a database,
+#              'template' to create a template for a database,
+#              or 'search' to check if a specifed template exists.
+#              create
+#
+#              Please enter a template name and the name of the new database, 
+#              seperated by spaces.
+#              oceans mars
+#
+#              Database "mars" not found in databases.txt.
+#              Error: Database mars already exists.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*  dog.db                  find_template_file.sh*  template.dat         testing.log
+#              junkscripts/  create.sh*  create_template.sh*  databases.txt        find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh
+#              Incorrect number of arguments: 0
+#              Usage: ./database_exists.sh [DATABASE TO SEARCH FOR] [DATABASE LIST FILE]
+#              kcarrion@polaris ~/cs462/Database $ mars databases.txt
+#              -bash: mars: command not found
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists mars databases.txt
+#              -bash: ./database_exists: No such file or directory
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh mars databases.txt
+#              Database "mars" not found in databases.txt.
+#              kcarrion@polaris ~/cs462/Database $ vim create_database.sh
+#
+#
+#              Press ENTER or type command to continue
+#              kcarrion@polaris ~/cs462/Database $ ./database_exists.sh mars databases.txt
+#              Database "mars" not found in databases.txt.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh
+#              Error: Incorrect number of arguments: 0
+#              Usage: ./create_database.sh <Template_Name> <Database_Name>
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh oceans mars
+#              Database "mars" not found in databases.txt.
+#              Database mars using template oceans has been created.
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*  dog.db                  find_template_file.sh*  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  databases.txt        find_template_file.awk  mars.db                 template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals hens
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ vim template.dat
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh animals hens
+#              Error: Template animals does not exist.
+#              kcarrion@polaris ~/cs462/Database $ ./create_database.sh oceans hens
+#              Database "hens" not found in databases.txt.
+#              Database hens using template oceans has been created.
+#              kcarrion@polaris ~/cs462/Database $ rm *.db
+#              kcarrion@polaris ~/cs462/Database $ ls
+#              backup/       README.txt  create_database.sh*  database_exists.sh*  find_template_file.awk  permissions_helper.sh*  template_exists.sh*
+#              junkscripts/  create.sh*  create_template.sh*  databases.txt        find_template_file.sh*  template.dat            testing.log
+#              kcarrion@polaris ~/cs462/Database $ 
+#
